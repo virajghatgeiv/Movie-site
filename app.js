@@ -5,8 +5,12 @@ arrows.forEach((arrow,i) => {
   const itemNumber = movieLists[i].querySelectorAll("img").length;
   let clickCounter = 0;
  arrow.addEventListener("click", () => {
-   const ratio = Math.floor(window.innerWidth/270);
+   const ratio = Math.floor(window.innerWidth/300);
    clickCounter++;
+
+  //  console.log("ItemNo clickcn ratio")
+  //  console.log(itemNumber ,clickCounter, ratio)
+  //  console.log(itemNumber - (6 + clickCounter ) + (6 - ratio))
   if(itemNumber - (6 + clickCounter ) + (6 - ratio) >= 0) {
    movieLists[i].style.transform = `translateX(${
      movieLists[i].computedStyleMap().get("transform")[0].x.value - 300}px)`;
@@ -15,7 +19,7 @@ arrows.forEach((arrow,i) => {
     clickCounter = 0;
   }
  });
-  console.log(Math.floor(window.innerWidth/270));
+  // console.log(Math.floor(window.innerWidth/300));
 });
 
 
